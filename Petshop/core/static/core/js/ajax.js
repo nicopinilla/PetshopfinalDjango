@@ -6,7 +6,7 @@ function cargarContenidoAjax(){
         var xhr = new XMLHttpRequest();
 
         //conexion
-        xhr.open("GET", "assets/images/nota_especial_del_equipo.txt", true);
+        xhr.open("GET", "{% static 'core/img/nota_especial_del_equipo.txt' %}", true);
         xhr.onreadystatechange = function(){
                 if(xhr.readyState == 4 && xhr.status == 200){
                         console.log("gracias por ver nuestra nota especial")

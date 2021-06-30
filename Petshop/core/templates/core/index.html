@@ -24,10 +24,10 @@
     <meta property="og:description" content="Add_Description_Text" />
     <meta name="robots" content="noindex, follow" />
     <!-- Add site Favicon -->
-    <link rel="icon" href="assets/images/favicon/favicon.png" sizes="32x32" />
-    <link rel="icon" href="assets/images/favicon/favicon.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
-    <meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png" />
+    <link rel="icon" href="'core/images/favicon/favicon.png" sizes="32x32" />
+    <link rel="icon" href="{% static 'core/images/favicon/favicon.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="{% static 'core/images/favicon/favicon.png" />
+    <meta name="msapplication-TileImage" content="{% static 'core/images/favicon/favicon.png" />
     <!-- Structured Data  -->
     <script type="application/ld+json">
         {
@@ -46,11 +46,14 @@
   ============================================ -->
 
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
-<!--     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css"> <!-- boostrap.min.cs (profe)--> 
+    <!--     <link rel="stylesheet" href="{% static 'core/css/vendor/bootstrap.min.css"> <!-- boostrap.min.cs (profe)-->
     <link rel="stylesheet" href="{% static 'core/css/vendor/bootstrap.min.css' %}"> <!-- boostrap.min.cs (profe)-->
     <link rel="stylesheet" href="{% static 'core/css/vendor/ionicons.min.css' %} ">
     <link rel="stylesheet" href="{% static 'core/css/vendor/linearicon.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/vendor/font-awesome.min.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'core/css/vendor/font-awesome.min.css' %}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'core/css/vendor/line-awesome.css' %}">
 
     <!-- Plugins CSS (All Plugins Files) -->
@@ -59,9 +62,9 @@
     <link rel="stylesheet" href="{% static 'core/css/plugins/slick.css' %}">
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css" />
-        <link rel="stylesheet" href="assets/css/plugins/plugins.min.css" />
-        <link rel="stylesheet" href="assets/css/style.min.css"> -->
+    <!-- <link rel="stylesheet" href="{% static 'core/css/vendor/vendor.min.css" />
+        <link rel="stylesheet" href="{% static 'core/css/plugins/plugins.min.css" />
+        <link rel="stylesheet" href="{% static 'core/css/style.min.css"> -->
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
@@ -81,7 +84,7 @@
                             <div class="menu-nav ">
                                 <div class="dropdown float-right">
                                     <button type="button"><i class="las la-user-circle"></i><a
-                                            href="login.html">login/crear</a> </button>
+                                            href="{% url 'login' %}">login/crear</a> </button>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +102,7 @@
                 <div class="row">
                     <div class="col-md-3 d-flex">
                         <div class="logo align-self-center">
-                            <a href="index.html"><img class="img-responsive" src="assets/images/logo/logo.png"
+                            <a href="{% url 'index' %}"><img class="img-responsive" src="{% static 'core/img/logo.png' %}"
                                     alt="logo.png" /></a>
                         </div>
                     </div>
@@ -107,16 +110,16 @@
                         <div class="header-horizontal-menu align-self-center ">
                             <ul class="menu-content ">
                                 <li>
-                                    <a class="cabezera-letra" href="index.html">Inicio </a>
+                                    <a class="cabezera-letra" href="{% url 'index' %}">Inicio </a>
                                 </li>
                                 <li>
-                                    <a class="cabezera-letra" href="shop-list-left-sidebar.html">Productos </a>
+                                    <a class="cabezera-letra" href="{% url 'tiendaProducto' %}">Productos </a>
                                 </li>
                                 <li>
-                                    <a class="cabezera-letra" href="about.html">Sobre Nosotros </a>
+                                    <a class="cabezera-letra" href="{% url 'sobrenosotros' %}">Sobre Nosotros </a>
                                 </li>
                                 <li>
-                                    <a class="cabezera-letra" href="contact.html">Contacto </a>
+                                    <a class="cabezera-letra" href="{% url 'contacto' %}">Contacto </a>
                                 </li>
                             </ul>
                         </div>
@@ -135,22 +138,22 @@
                 <!-- Header Logo Start -->
                 <div>
                     <div class="col-12 col-sm-12  header-logo centrar-logo">
-                        <a href="index.html"><img class="cabezera-icono" src="assets/images/logo/logo.png"
+                        <a href="{% url 'index' %}"><img class="cabezera-icono" src="{% static 'core/img/logo.png' %}"
                                 alt="logo.png" /></a>
                     </div>
                     <div class="header-horizontal-menu align-self-center">
                         <ul class="cabezera-mobil-ul">
                             <li class="col-5 col-sm-5 col-md-2 cabezera-mobil-li">
-                                <a href="index.html">Inicio </a>
+                                <a href="{% url 'index' %}">Inicio </a>
                             </li>
                             <li class="col-5 col-sm-5 col-md-2 cabezera-mobil-li">
-                                <a href="shop-list-left-sidebar.html">Productos </a>
+                                <a href="{% url 'tiendaProducto' %}">Productos </a>
                             </li>
                             <li class="col-5 col-sm-5 col-md-2 cabezera-mobil-li">
-                                <a href="about.html">Sobre Nosotros </a>
+                                <a href="{% url 'sobrenosotros' %}">Sobre Nosotros </a>
                             </li>
                             <li class="col-5 col-sm-5 col-md-2 cabezera-mobil-li">
-                                <a href="contact.html">Contacto </a>
+                                <a href="{% url 'contacto' %}">Contacto </a>
                             </li>
                         </ul>
                     </div>
@@ -170,11 +173,11 @@
         <div class="hero-slider-wrapper">
             <!-- Single Slider  -->
             <div class="single-slide slider-height-1 bg-img d-flex"
-                data-bg-image="assets/images/product-image/PETSHOP2.jpg">
+                data-bg-image="{% static 'core/img/Home_1.jpg' %}">
             </div>
             <!-- Single Slider  -->
             <div class="single-slide slider-height-1 bg-img d-flex"
-                data-bg-image="assets/images/product-image/PETSHOP11.jpg">
+                data-bg-image="{% static 'core/img/Home_2.jpg' %}">
             </div>
             <!-- Single Slider  -->
         </div>
@@ -189,8 +192,8 @@
                 <li>CLIENTE DEL DIA</li>
             </ul>
         </div>
-        <img class="rounded mx-auto d-block cliente" id='clientedeldia' src="assets/images/product-image/GATOAPI.jpg"
-            alt="">
+        <img class="rounded mx-auto d-block cliente" id='clientedeldia'
+            src="{% static 'core/images/product-image/GATOAPI.jpg" alt="">
 
     </div>
 
@@ -204,42 +207,30 @@
                 <div class="thumb-category-slider slider-nav-style-1">
                     <div class="thumb-slider-inner">
                         <div class="thumb-category">
-                            <a href="shop-list-left-sidebar.html">
-                                <img src="assets/images/product-image/PRODUCTO11.jpg" alt="thumb-image">
+                            <a href="{% url 'tiendaProducto' %}">
+                                <img src="{% static 'core/img/producto_1.jpg' %}" alt="thumb-image">
                             </a>
-                            <div class="thumb-category-desc">
-                                <h4><a href="shop-left-sidebar.html">Toalla de entrenamiento</a></h4>
-                            </div>
                         </div>
                     </div>
                     <div class="thumb-slider-inner">
                         <div class="thumb-category">
-                            <a href="shop-list-left-sidebar.html">
-                                <img src="assets/images/product-image/PRODUCTO10.jpg" alt="thumb-image">
+                            <a href="{% url 'tiendaProducto' %}">
+                                <img src="{% static 'core/img/producto_2.jpg' %}" alt="thumb-image">
                             </a>
-                            <div class="thumb-category-desc">
-                                <h4><a href="shop-left-sidebar.html">Juguete para gatos</a></h4>
-                            </div>
                         </div>
                     </div>
                     <div class="thumb-slider-inner">
                         <div class="thumb-category">
-                            <a href="shop-list-left-sidebar.html">
-                                <img src="assets/images/product-image/PRODUCTO8.jpg" alt="thumb-image">
+                            <a href="{% url 'tiendaProducto' %}">
+                                <img src="{% static 'core/img/producto_3.jpg' %}" alt="thumb-image">
                             </a>
-                            <div class="thumb-category-desc">
-                                <h4><a href="shop-left-sidebar.html">Collar isabelino</a></h4>
-                            </div>
                         </div>
                     </div>
                     <div class="thumb-slider-inner">
                         <div class="thumb-category">
-                            <a href="shop-list-left-sidebar.html">
-                                <img src="assets/images/product-image/PRODUCTO3.jpg" alt="thumb-image">
+                            <a href="{% url 'tiendaProducto' %}">
+                                <img src="{% static 'core/img/producto_4.jpg' %}" alt="thumb-image">
                             </a>
-                            <div class="thumb-category-desc">
-                                <h4><a href="shop-left-sidebar.html">Collar peces</a></h4>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -278,9 +269,9 @@
                                 <h4 class="footer-herading">Información</h4>
                                 <div class="footer-links">
                                     <ul>
-                                        <li><a href="contact.html">Ubicanos</a></li>
-                                        <li><a href="about.html">Sobre nosotros</a></li>
-                                        <li><a href="contact.html">Contacto</a></li>
+                                        <li><a href="{% url 'contacto' %}">Ubicanos</a></li>
+                                        <li><a href="{% url 'sobrenosotros' %}">Sobre nosotros</a></li>
+                                        <li><a href="{% url 'contacto' %}">Contacto</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -290,11 +281,11 @@
                                 <h4 class="footer-herading">Página</h4>
                                 <div class="footer-links">
                                     <ul>
-                                        <li><a href="cart.html">Carrito de compras</a></li>
-                                        <li><a href="login.html">Iniciar Sesión</a></li>
-                                        <li><a href="login.html">Registrarse</a></li>
-                                        <li><a href="shop-list-left-sidebar.html">Productos</a></li>
-                                        <li><a href="index.html">Inicio</a></li>
+                                        <li><a href="{% url 'carrito' %}">Carrito de compras</a></li>
+                                        <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                                        <li><a href="{% url 'login' %}">Registrarse</a></li>
+                                        <li><a href="{% url 'tiendaProducto' %}">Productos</a></li>
+                                        <li><a href="{% url 'index' %}">Inicio</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -312,27 +303,27 @@
     <!-- JS============================================ -->
 
     <!-- Vendors JS -->
-    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script> <!-- jquery-version.min.css (profe)-->
-    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="{% static 'core/js/vendor/jquery-3.5.1.min.js' %}"></script> <!-- jquery-version.min.css (profe)-->
+    <script src="{% static 'core/js/vendor/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'core/js/vendor/jquery-migrate-3.3.0.min.js' %}"></script>
+    <script src="{% static 'core/js/vendor/modernizr-3.7.1.min.js' %}"></script>
 
     <!-- Plugins JS -->
-    <script src="assets/js/plugins/jquery-ui.min.js"></script>
-    <script src="assets/js/plugins/slick.js"></script>
-    <script src="assets/js/plugins/countdown.js"></script>
-    <script src="assets/js/plugins/scrollup.js"></script>
-    <script src="assets/js/plugins/ripples.js"></script>
-    <script src="assets/js/plugins/elevateZoom.js"></script>
+    <script src="{% static 'core/js/plugins/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'core/js/plugins/slick.js' %}"></script>
+    <script src="{% static 'core/js/plugins/countdown.js' %}"></script>
+    <script src="{% static 'core/js/plugins/scrollup.js' %}"></script>
+    <script src="{% static 'core/js/plugins/ripples.js' %}"></script>
+    <script src="{% static 'core/js/plugins/elevateZoom.js' %}"></script>
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <!-- <script src="assets/js/vendor/vendor.min.js"></script>
-        <script src="assets/js/plugins/plugins.min.js"></script> -->
+    <!-- <script src="{% static 'core/js/vendor/vendor.min.js' %}"></script>
+        <script src="{% static 'core/js/plugins/plugins.min.js' %}"></script> -->
 
     <!-- Main Activation JS -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/vendor/popper.min.js"></script> <!-- popper.min.js (profe)-->
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="{% static 'core/js/main.js' %}"></script>
+    <script src="{% static 'core/js/vendor/popper.min.js' %}"></script> <!-- popper.min.js (profe)-->
+    <script src="{% static 'core/js/vendor/bootstrap.min.js' %}"></script>
     <!--bootstrap.min.js (profe) -->
     <script>
         $(document).ready(function () {
@@ -346,10 +337,10 @@
 
             });
             $("#clientedeldia").mouseover(function () {
-                $(this).animate({ height: '500px',width:'500px' });
+                $(this).animate({ height: '500px', width: '500px' });
             });
             $("#clientedeldia").mouseout(function () {
-                $(this).animate({ height: '250px',width:'250px'  });
+                $(this).animate({ height: '250px', width: '250px' });
             });
         })
 
