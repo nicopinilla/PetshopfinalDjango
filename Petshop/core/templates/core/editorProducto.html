@@ -1,128 +1,15 @@
+
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodega petshop</title>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <link href="{% static 'core/css/forms.css'%}" rel="stylesheet">
+{% block stylesheet %}
 
-    <!-- CSS
-  ============================================ -->
-
-    <!-- Vendor CSS (Bootstrap & Icon Font) -->
-    <!--     <link rel="stylesheet" href="{% static 'core/css/vendor/bootstrap.min.css"> <-- boostrap.min.cs (profe)-->
-    <link rel="stylesheet" href="{% static 'core/css/vendor/bootstrap.min.css' %}"> <!-- boostrap.min.cs (profe)-->
-    <link rel="stylesheet" href="{% static 'core/css/vendor/ionicons.min.css' %} ">
-    <link rel="stylesheet" href="{% static 'core/css/vendor/linearicon.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/vendor/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/vendor/line-awesome.css' %}">
-
-    <!-- Plugins CSS (All Plugins Files) -->
-    <link rel="stylesheet" href="{% static 'core/css/plugins/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/plugins/jquery-ui.min.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/plugins/slick.css' %}">
-
-    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <!-- <link rel="stylesheet" href="{% static 'core/css/vendor/vendor.min.css" />
-    <link rel="stylesheet" href="{% static 'core/css/plugins/plugins.min.css" />
-    <link rel="stylesheet" href="{% static 'core/css/style.min.css"> -->
-
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}"><!-- css del grupo (profe)-->
-    <style>
-        .form-group label {
-            font-family: "Nunito";
-            font-weight: 700;
-            color: #333;
-            margin: 0;
-            font-size: 40;
-            text-align: initial;
-            padding-bottom: 10px;
-        }
-
-        .form-group input#id_nombre,
-        input#id_precio,
-        input#id_stock,
-        input#id_descripcion {
-            font-family: "Nunito";
-            font-weight: 400;
-            color: #333;
-            margin: 0;
-            font-size: 40;
-            text-align: left;
-            border: solid #000;
-            border-width: 1px 1px;
-
-        }
-
-        .form-group p {
-            font-family: "Nunito";
-            font-weight: 700;
-            color: #333;
-            margin: 0;
-            font-size: 40;
-        }
-
-        .form-group a {
-            font-family: "Nunito";
-            font-weight: 700;
-            color: #333;
-            margin: 0;
-            font-size: 40;
-        }
-
-        .form-group input {
-            margin-left: 50px;
-
-        }
-
-        .form-group select {
-            margin-left: 0px;
-
-        }
-
-    </style>
-</head>
-<!-- Cabezera inicio -->
-
-<header class="header-wrapper">
-    <div class="header-menu bg-indigo sticky-nav d-lg-block d-none ptb-25px">
-        <div class="container ">
-            <h2 style="text-align: center; color: aliceblue;" class="footer-herading">
-                Mantenedor de productos
-            </h2>
-            <div class="row">
-                <div class="col-md-3 d-flex">
-                    <div class="logo align-self-center">
-                        <a href="{% url 'index' %}"><img class="img-responsive" src="{% static 'core/img/logo.png' %}"
-                                alt="logo.png" />
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<body>
-    
+{% endblock %}
+{% block content %}
+<br>
+<h2 style="text-align: center; color: black;" class="footer-herading">
+    Mantenedor de productos
+</h2>
     <div class="slidebar-tittle">
         <div class="container">
             <div style="margin-top: 50px;" class="row">
@@ -209,6 +96,4 @@
     <br>
     <a href="http://127.0.0.1:8000/admin" class="btn btn-info btn-sm">Administración</a>
     <a href="{% url 'index' %}" class="btn btn-info btn-sm">Home page</a>
-</body>
-
-</html>
+{% endblock content %}

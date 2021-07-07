@@ -30,6 +30,12 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES' : [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
     'core',
     'rest_petshop',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +139,9 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = path.join(BASE_DIR, 'media')
  
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL  = 'index'
+LOGOUT_REDIRECT_URL  = 'index'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
